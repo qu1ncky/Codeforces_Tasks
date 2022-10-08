@@ -1,12 +1,9 @@
 #include <stdio.h>
 
-//на вход 2 значения , 1 = вин; 0 = луз
-
 int main()
 {
 
     int N, count = 0, maxCount = 0, a;
-    printf("Put N value: ");
     scanf("%d", &N);
     int array[N];
 
@@ -32,11 +29,11 @@ int main()
     }
     if (count >= maxCount)
     {
-        printf("Winstreak: %d", count);
+        printf("%d", count);
     }
     else
     {
-        printf("Winstreak: %d", maxCount);
+        printf("%d", maxCount);
     }
     return 0;
 }

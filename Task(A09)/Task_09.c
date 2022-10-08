@@ -14,7 +14,6 @@ int main()
         array[i] = a;
     }
 
-    //ЕБАТЕЛЬСКАЯ СОРТИРОВКА (ЛУЧШЕ ЧЕМ ПУЗЫРЬКОМ...)
     for (int i = 0; i < N; i++)
     {
         int minPos = i;
@@ -30,26 +29,30 @@ int main()
         array[i] = temp;
     }
 
-    for (int i = 1; i < N; i++)
+    if (N == 1)
     {
-        if (array[i] == array[i - 1])
+        printf("100%%");
+    }
+    else
+    {
+        for (int i = 0; i < (N - 1); i++)
         {
-            count++;
-        }
-        else
-        {
-            if (maxCount < count)
+            if (array[i] == array[i + 1])
             {
-                maxCount = count;
+                count++;
+            }
+            else
+            {
                 count = 1;
             }
+            if (count > maxCount)
+            {
+                maxCount = count;
+            }
         }
+        p = (maxCount * 100 / N);
+        printf("%.f%%", p);
     }
-    if (count > maxCount)
-    {
-        maxCount = count;
-    }
-    p = (maxCount * 100 / N);
-    printf("%.f%%", p);
+
     return 0;
 }
